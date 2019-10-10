@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel index.html",
-    "build": "rm -rf build/* && parcel build index.html -d build --public-url /rubenzagon.github.io/mp3-Player/",
+    "dev": "parcel src/index.html",
+    "build": "rm -rf build/* && parcel build src/index.html -d build --public-url /mp3-Player/",
     
     "deploy": "git subtree push --prefix build origin gh-pages"
   },
