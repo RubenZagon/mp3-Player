@@ -8,7 +8,7 @@ let currentSong = 0;
 let audio = new Audio(songs[currentSong]); // Descarga la primera canción
 audio.volume = 0.5;
 
-const divText = document.querySelector('.text');
+const divText = document.querySelector('.ldcText');
 const buttons = {
     play: document.querySelector('.play'),
     pause: document.querySelector('.pause'),
