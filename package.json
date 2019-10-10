@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel index.html"
+    "dev": "parcel index.html",
+    "build": "rm -rf build/* && parcel build index.html -d build --public-url /rubenzagon.github.io/mp3-player",
+    
+    "deploy": "git subtree push --prefix build origin gh-pages"
   },
   "repository": {
     "type": "git",

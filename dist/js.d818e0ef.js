@@ -180,60 +180,13 @@ function changeVolume(vol, name) {
 }
 
 function fnVolume() {
-  // Way 1 (ERROR!!)
-  // if (audio.volume == 0.5) {
-  //     audio.volume = 1;
-  //     buttons.volume.innerHTML = '<i class="fas fa-volume-up"></i>';
+  if (audio.volume == 0.5) changeVolume(1, 'up');else if (audio.volume == 1) changeVolume(0, 'mute');else changeVolume(0.5, 'down'); // Way 5 (CRAZY JAVASCRIPT ULTIMATE REFACTOR)
+  // const cases = {
+  //     0.5: changeVolume.bind(null, 1, 'up'),
+  //     1: changeVolume.bind(null, 0, 'mute'),
+  //     0: changeVolume.bind(null, 0.5, 'down')
   // }
-  // if (audio.volume == 1) {
-  //     audio.volume = 0;
-  //     buttons.volume.innerHTML = '<i class="fas fa-volume-mute"></i>';
-  // }
-  // if (audio.volume == 0) {
-  //     audio.volume = 0.5;
-  //     buttons.volume.innerHTML = '<i class="fas fa-volume-down"></i>';
-  // }
-  // Way 2 (ELSE!)
-  // if (audio.volume == 0.5) {
-  //     audio.volume = 1;
-  //     buttons.volume.innerHTML = '<i class="fas fa-volume-up"></i>';
-  // } else if (audio.volume == 1) {
-  //     audio.volume = 0;
-  //     buttons.volume.innerHTML = '<i class="fas fa-volume-mute"></i>';
-  // } else if (audio.volume == 0) {
-  //     audio.volume = 0.5;
-  //     buttons.volume.innerHTML = '<i class="fas fa-volume-down"></i>';
-  // }
-  // Way 3 (Refactor)
-  // En nuestro caso, se puede eliminar el último if
-  // if (audio.volume == 0.5)
-  //     changeVolume(1, 'up');
-  // else if (audio.volume == 1)
-  //     changeVolume(0, 'mute');
-  // else if (audio.volume == 0)
-  //     changeVolume(0.5, 'down');
-  // Way 4 (Switch)
-  // switch (audio.volume) {
-  //     case 0.5:
-  //         changeVolume(1, 'up');
-  //         break;
-  //     case 1:
-  //         changeVolume(0, 'mute');
-  //         break;
-  //     case 0:
-  //         changeVolume(0.5, 'down');
-  //         break;
-  //     default:
-  //         alert('ERROR: Esto no puede ocurrir');
-  //         break;
-  // }
-  // Way 5 (CRAZY JAVASCRIPT ULTIMATE REFACTOR)
-  var cases = {
-    0.5: changeVolume.bind(null, 1, 'up'),
-    1: changeVolume.bind(null, 0, 'mute'),
-    0: changeVolume.bind(null, 0.5, 'down')
-  };
-  cases[audio.volume]();
+  // cases[audio.volume]();
 }
 
 function putText() {
@@ -279,7 +232,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53438" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62470" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
